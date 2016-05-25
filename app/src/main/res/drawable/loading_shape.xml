@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="10.0dp" />
+
+    <!-- 第一套加载框的颜色为黑色#000000 -->
+    <solid android:color="#000000" />
+
+    <stroke
+        android:width="0dp"
+        android:color="#00000000" />
+
+    <padding
+        android:bottom="20.0dp"
+        android:left="20.0dp"
+        android:right="20.0dp"
+        android:top="20.0dp" />
+
+</shape>
