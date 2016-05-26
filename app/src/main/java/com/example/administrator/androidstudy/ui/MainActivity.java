@@ -1,24 +1,42 @@
 package com.example.administrator.androidstudy.ui;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.administrator.androidstudy.R;
 import com.example.administrator.androidstudy.widget.DialogLoad;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
-private DialogLoad dialogLoad;
+
+    @BindView(R.id.btn_immerse)
+    Button btnImmerse;
+    private DialogLoad dialogLoad;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        /**  toolbar 相结合的沉浸式布局  */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,17 +48,16 @@ private DialogLoad dialogLoad;
                         .setAction("Action", null).show();
             }
         });
-        dialogLoad=new DialogLoad(this);
+        dialogLoad = new DialogLoad(this);
     }
 
-    public void toLoad(View v){
-        if(!dialogLoad.isShowing()){
+    public void toLoad(View v) {
+        if (!dialogLoad.isShowing()) {
             dialogLoad.showDialog();
-        }else{
+        } else {
             dialogLoad.dismiss();
         }
     }
-
 
 
     @Override
@@ -63,5 +80,13 @@ private DialogLoad dialogLoad;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @OnClick(R.id.btn_immerse)
+    public void toImerse1(View view) {
+        Toast.makeText(MainActivity.this,"assss",Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(MainActivity.this,ImmerseActivity.class);
+        startActivity(intent);
     }
 }
