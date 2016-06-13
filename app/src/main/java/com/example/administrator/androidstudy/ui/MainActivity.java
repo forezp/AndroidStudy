@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //VersionCheckHelper.checkNewVersion(MainActivity.this,false); 检查版本跟新
         dialogLoad = new DialogLoad(this);
     }
 

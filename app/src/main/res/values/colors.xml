@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="red_base">#FB5B81</color>
     <color name="white">#ffffff</color>
+    <color name="mxh_first_text_color">#484848</color>
 </resources>

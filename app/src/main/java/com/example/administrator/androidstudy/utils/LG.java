@@ -1,7 +1,5 @@
 package com.example.administrator.androidstudy.utils;
 
-
-
 import android.util.Log;
 
 /**
@@ -10,26 +8,19 @@ import android.util.Log;
 public class LG {
 
     /**
-     * 是否开启debug
+     * 
      */
     public static boolean isDebug=true;
-
-
-    /**
-     * 错误
-     *
-     * 2014-5-8
-     * @param TAG
-     * @param msg
-     */
+    
     public static void e(String TAG,String msg){
         if(isDebug){
-            Log.e(TAG, msg+"");
+            Log.e(TAG, msg + "");
         }
     }
 
+
     /**
-     * 错误
+     * 
      *
      * 2014-5-8
      * @param clazz
@@ -37,11 +28,11 @@ public class LG {
      */
     public static void e(Class<?> clazz,String msg){
         if(isDebug){
-            Log.e(clazz.getSimpleName(), msg+"");
+            Log.e(clazz.getSimpleName(), msg + "");
         }
     }
     /**
-     * 信息
+     *
      *
      * 2014-5-8
      * @param clazz
@@ -53,7 +44,7 @@ public class LG {
         }
     }
     /**
-     * 警告
+     * 
      *
      * 2014-5-8
      * @param clazz
@@ -61,10 +52,9 @@ public class LG {
      */
     public static void w(Class<?> clazz,String msg){
         if(isDebug){
-            Log.w(clazz.getSimpleName(), msg+"");
+            Log.w(clazz.getSimpleName(), msg + "");
         }
     }
 }
-
 
 
